@@ -3,6 +3,11 @@
 #Simple Calculator w/ GUI
 
 #create a GUI for our calculator
+from tkinter import *
+
+root = Tk()
+
+root.mainloop()
     #create a space where the calculation takes place or the screen of a calculator
     # create a functioning button for 7
     # create a functioning button for 8 
