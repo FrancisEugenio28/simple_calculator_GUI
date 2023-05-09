@@ -15,7 +15,11 @@ root.configure(background='black')
 input_digit = Label(root, text='', bg='black', fg='white')
 input_digit.grid(row=0, column=0, pady=(50,25), columnspan=5, sticky='w')
 input_digit.config(font=('verdana',30, 'bold'))
-    # create a functioning button for 7
+
+# create a functioning button for 7
+button7 = Button(root, text='7', bg='white', fg='grey', width=5, height=2)
+button7.grid(row=1, column=0)
+button7.config(font=('verdana', 14, 'bold'))
     # create a functioning button for 8 
     # create a functioning button for 9
     # create a functioning button for +
