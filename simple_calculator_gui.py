@@ -55,10 +55,26 @@ button6.config(font=('verdana', 14, 'bold'))
 button_minus = Button(root, text='-', bg='white', fg='grey', width=5, height=2)
 button_minus.grid(row=2, column=3)
 button_minus.config(font=('verdana', 14, 'bold'))
-    # create a functioning button for 1
-    # create a functioning button for 2
-    # create a functioning button for 3
-    # create a functioning button for *
+    
+# create a functioning button for 1
+button1 = Button(root, text='1', bg='white', fg='grey', width=5, height=2)
+button1.grid(row=3, column=0)
+button1.config(font=('verdana', 14, 'bold'))
+
+# create a functioning button for 2
+button2 = Button(root, text='2', bg='white', fg='grey', width=5, height=2)
+button2.grid(row=3, column=1)
+button2.config(font=('verdana', 14, 'bold'))
+    
+# create a functioning button for 3
+button3 = Button(root, text='3', bg='white', fg='grey', width=5, height=2)
+button3.grid(row=3, column=2)
+button3.config(font=('verdana', 14, 'bold'))
+
+# create a functioning button for *
+button_multiply = Button(root, text='*', bg='white', fg='grey', width=5, height=2)
+button_multiply.grid(row=3, column=3)
+button_multiply.config(font=('verdana', 14, 'bold'))
     # create a functioning button for clear
     # create a functioning button for 0
     # create a functioning button for =
