@@ -32,6 +32,24 @@ try:
         operator = op
         input_digit.config(text='')
 
+    # Perform operation within the = button
+    def get_answer():
+        global frst_num, scnd_num, operator
+         
+        scnd_num = input_digit['text']
+
+        if operator == '+':
+            input_digit.config(text=int(frst_num + scnd_num))
+        elif operator == '-':
+            input_digit.config(text=int(frst_num - scnd_num))
+        elif operator == '*':
+            input_digit.config(text=int(frst_num * scnd_num))
+        else:
+            if scnd_num == 0:
+                input_digit.config(text='Syntax Error')
+            else:
+                input_digit.config(text=str(frst_num / scnd_num))
+
 except ZeroDivisionError:
     print("Syntax Error")
 
@@ -126,7 +144,5 @@ button_divide = Button(root, text='/', bg='white', fg='grey', width=5, height=2,
 button_divide.grid(row=4, column=3)
 button_divide.config(font=('verdana', 14, 'bold'))
 
-
-# Perform operation within the = button
 
 root.mainloop()
