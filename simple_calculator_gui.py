@@ -39,16 +39,16 @@ try:
         scnd_num = input_digit['text']
 
         if operator == '+':
-            input_digit.config(text=int(frst_num + scnd_num))
+            input_digit.config(text=int(float(frst_num) + float(scnd_num)))
         elif operator == '-':
-            input_digit.config(text=int(frst_num - scnd_num))
+            input_digit.config(text=int(float(frst_num) - float(scnd_num)))
         elif operator == '*':
-            input_digit.config(text=int(frst_num * scnd_num))
+            input_digit.config(text=int(float(frst_num) * float(scnd_num)))
         else:
             if scnd_num == 0:
                 input_digit.config(text='Syntax Error')
             else:
-                input_digit.config(text=str(frst_num / scnd_num))
+                input_digit.config(text=str(float(frst_num) / float(scnd_num)))
 
 except ZeroDivisionError:
     print("Syntax Error")
