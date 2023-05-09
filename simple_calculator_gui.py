@@ -18,6 +18,10 @@ try:
         new = current + str(digit)
         input_digit.config(text=new)
 
+    # Give a function for the clear button
+    def clear():
+        input_digit.config(text='')
+
 except ZeroDivisionError:
     print("Syntax Error")
 
@@ -93,7 +97,7 @@ button_multiply.grid(row=3, column=3)
 button_multiply.config(font=('verdana', 14, 'bold'))
 
 # create a functioning button for clear
-button_clear = Button(root, text='AC', bg='white', fg='grey', width=5, height=2)
+button_clear = Button(root, text='AC', bg='white', fg='grey', width=5, height=2, command=lambda :clear())
 button_clear.grid(row=4, column=0)
 button_clear.config(font=('verdana', 14, 'bold'))
     
@@ -112,8 +116,7 @@ button_divide = Button(root, text='/', bg='white', fg='grey', width=5, height=2)
 button_divide.grid(row=4, column=3)
 button_divide.config(font=('verdana', 14, 'bold'))
 
-# gather all the input digits based on the pressed button in the GUI
-# Give a function for the clear button
+
 # Perform operation within the = button
 
 root.mainloop()
