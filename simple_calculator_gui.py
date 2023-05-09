@@ -12,7 +12,10 @@ root.resizable(0,0)
 root.configure(background='black')
 
 root.mainloop()
-    #create a space where the calculation takes place or the screen of a calculator
+#create a space where the calculation takes place or the screen of a calculator
+input_digit = Label(root, text='', bg='yellow', fg='white')
+input_digit.grid(row=0, column=0, pady=(50,25), columnspan=5, sticky='w')
+input_digit.config(font=('verdana',30, 'bold'))
     # create a functioning button for 7
     # create a functioning button for 8 
     # create a functioning button for 9
