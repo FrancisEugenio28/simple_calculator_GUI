@@ -48,7 +48,7 @@ try:
             if scnd_num == 0:
                 input_digit.config(text='Syntax Error')
             else:
-                input_digit.config(text=str(float(frst_num) / float(scnd_num)))
+                input_digit.config(text=str(round(float(frst_num) / float(scnd_num), 2)))
 
 except ZeroDivisionError:
     print("Syntax Error")
