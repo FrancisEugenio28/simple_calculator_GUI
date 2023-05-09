@@ -7,7 +7,7 @@ from tkinter import *
 
 root = Tk()
 root.title('Simple Calculator')
-root.geometry('280x380')
+root.geometry('300x380')
 root.resizable(0,0)
 root.configure(background='black')
 
@@ -30,7 +30,11 @@ button8.config(font=('verdana', 14, 'bold'))
 button9 = Button(root, text='9', bg='white', fg='grey', width=5, height=2)
 button9.grid(row=1, column=2)
 button9.config(font=('verdana', 14, 'bold'))
-    # create a functioning button for +
+
+# create a functioning button for +
+button_add = Button(root, text='+', bg='white', fg='grey', width=5, height=2)
+button_add.grid(row=1, column=3)
+button_add.config(font=('verdana', 14, 'bold'))
     # create a functioning button for 4
     # create a functioning button for 5
     # create a functioning button for 6
