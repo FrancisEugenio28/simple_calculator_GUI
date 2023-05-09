@@ -135,7 +135,7 @@ button0.grid(row=4, column=1)
 button0.config(font=('verdana', 14, 'bold'))
 
 # create a functioning button for =
-button_equals = Button(root, text='=', bg='white', fg='grey', width=5, height=2)
+button_equals = Button(root, text='=', bg='white', fg='grey', width=5, height=2, command=lambda :get_answer())
 button_equals.grid(row=4, column=2)
 button_equals.config(font=('verdana', 14, 'bold'))
     
