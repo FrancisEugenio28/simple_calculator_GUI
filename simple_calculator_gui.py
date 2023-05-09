@@ -11,6 +11,8 @@ root.geometry('300x380')
 root.resizable(0,0)
 root.configure(background='black')
 
+frst_num= scnd_num= operator= None
+
 try:    
     # give function for each number button
     def get_digit(digit):
@@ -20,6 +22,14 @@ try:
 
     # Give a function for the clear button
     def clear():
+        input_digit.config(text='')
+
+    # Create a function for each operation
+    def get_operation(op):
+        global frst_num, operator
+
+        frst_num = int(input_digit['text'])
+        operator = op
         input_digit.config(text='')
 
 except ZeroDivisionError:
@@ -52,7 +62,7 @@ button9.grid(row=1, column=2)
 button9.config(font=('verdana', 14, 'bold'))
 
 # create a functioning button for +
-button_add = Button(root, text='+', bg='white', fg='grey', width=5, height=2)
+button_add = Button(root, text='+', bg='white', fg='grey', width=5, height=2, command=lambda :get_operation('+'))
 button_add.grid(row=1, column=3)
 button_add.config(font=('verdana', 14, 'bold'))
     
@@ -72,7 +82,7 @@ button6.grid(row=2, column=2)
 button6.config(font=('verdana', 14, 'bold'))
 
 # create a functioning button for -
-button_minus = Button(root, text='-', bg='white', fg='grey', width=5, height=2)
+button_minus = Button(root, text='-', bg='white', fg='grey', width=5, height=2, command=lambda :get_operation('-'))
 button_minus.grid(row=2, column=3)
 button_minus.config(font=('verdana', 14, 'bold'))
     
@@ -92,7 +102,7 @@ button3.grid(row=3, column=2)
 button3.config(font=('verdana', 14, 'bold'))
 
 # create a functioning button for *
-button_multiply = Button(root, text='*', bg='white', fg='grey', width=5, height=2)
+button_multiply = Button(root, text='*', bg='white', fg='grey', width=5, height=2, command=lambda :get_operation('*'))
 button_multiply.grid(row=3, column=3)
 button_multiply.config(font=('verdana', 14, 'bold'))
 
@@ -112,7 +122,7 @@ button_equals.grid(row=4, column=2)
 button_equals.config(font=('verdana', 14, 'bold'))
     
 # create a functioning button for /
-button_divide = Button(root, text='/', bg='white', fg='grey', width=5, height=2)
+button_divide = Button(root, text='/', bg='white', fg='grey', width=5, height=2, command=lambda :get_operation('/'))
 button_divide.grid(row=4, column=3)
 button_divide.config(font=('verdana', 14, 'bold'))
 
