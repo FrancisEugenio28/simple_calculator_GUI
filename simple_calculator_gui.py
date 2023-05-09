@@ -35,7 +35,11 @@ button9.config(font=('verdana', 14, 'bold'))
 button_add = Button(root, text='+', bg='white', fg='grey', width=5, height=2)
 button_add.grid(row=1, column=3)
 button_add.config(font=('verdana', 14, 'bold'))
-    # create a functioning button for 4
+    
+# create a functioning button for 4
+button4 = Button(root, text='4', bg='white', fg='grey', width=5, height=2)
+button4.grid(row=2, column=0)
+button4.config(font=('verdana', 14, 'bold'))
     # create a functioning button for 5
     # create a functioning button for 6
     # create a functioning button for -
