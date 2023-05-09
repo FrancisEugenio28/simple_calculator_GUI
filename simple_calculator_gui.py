@@ -20,7 +20,11 @@ input_digit.config(font=('verdana',30, 'bold'))
 button7 = Button(root, text='7', bg='white', fg='grey', width=5, height=2)
 button7.grid(row=1, column=0)
 button7.config(font=('verdana', 14, 'bold'))
-    # create a functioning button for 8 
+    
+# create a functioning button for 8 
+button8 = Button(root, text='8', bg='white', fg='grey', width=5, height=2)
+button8.grid(row=1, column=1)
+button8.config(font=('verdana', 14, 'bold'))
     # create a functioning button for 9
     # create a functioning button for +
     # create a functioning button for 4
