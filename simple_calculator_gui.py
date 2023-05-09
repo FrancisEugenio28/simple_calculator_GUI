@@ -6,6 +6,10 @@
 from tkinter import *
 
 root = Tk()
+root.title('Simple Calculator')
+root.geometry('280x380')
+root.resizable(0,0)
+root.configure(background='black')
 
 root.mainloop()
     #create a space where the calculation takes place or the screen of a calculator
