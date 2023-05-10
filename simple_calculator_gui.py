@@ -4,6 +4,7 @@
 
 #create a GUI for our calculator
 from tkinter import *
+import pyfiglet
 
 root = Tk()
 root.title('Simple Calculator')
@@ -50,7 +51,7 @@ def get_answer():
             else:
                 input_digit.config(text=str(round(float(frst_num) / float(scnd_num), 2)))
     except ZeroDivisionError:
-        print("Division by zero is not allowed")
+        print(pyfiglet.figlet_format("Syntax Error", font = "bubble" ))
 
     finally: 
         print("Thank You For Using This Small And Simple Calculator ^__^")
