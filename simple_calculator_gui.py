@@ -33,27 +33,28 @@ def get_operation(op):
 
 # Perform operation within the = button
 def get_answer():
-    global frst_num, scnd_num, operator
-         
-    scnd_num = input_digit['text']
+    try: 
+        global frst_num, scnd_num, operator
+            
+        scnd_num = input_digit['text']
 
-    if operator == '+':
-        input_digit.config(text=int(float(frst_num) + float(scnd_num)))
-    elif operator == '-':
-        input_digit.config(text=int(float(frst_num) - float(scnd_num)))
-    elif operator == '*':
-        input_digit.config(text=int(float(frst_num) * float(scnd_num)))
-    else:
-        if scnd_num == 0:
-            input_digit.config(text='Syntax Error')
+        if operator == '+':
+            input_digit.config(text=int(float(frst_num) + float(scnd_num)))
+        elif operator == '-':
+            input_digit.config(text=int(float(frst_num) - float(scnd_num)))
+        elif operator == '*':
+            input_digit.config(text=int(float(frst_num) * float(scnd_num)))
         else:
-            input_digit.config(text=str(round(float(frst_num) / float(scnd_num), 2)))
+            if scnd_num == 0:
+                input_digit.config(text='Syntax Error')
+            else:
+                input_digit.config(text=str(round(float(frst_num) / float(scnd_num), 2)))
+    except ZeroDivisionError:
+        print("Division by zero is not allowed")
 
-except ZeroDivisionError:
-    print("Division by zero is not allowed")
+    finally: 
+        print("Thank You For Using This Small And Simple Calculator ^__^")
 
-finally: 
-    print("Thank You For Using This Small And Simple Calculator ^__^")
 
 #create a space where the calculation takes place or the screen of a calculator
 input_digit = Label(root, text='', bg='black', fg='white')
