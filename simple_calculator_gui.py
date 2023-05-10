@@ -13,48 +13,44 @@ root.configure(background='black')
 
 frst_num= scnd_num= operator= None
 
-try:    
-    # give function for each number button
-    def get_digit(digit):
-        current = input_digit['text']
-        new = current + str(digit)
-        input_digit.config(text=new)
+# give function for each number button
+def get_digit(digit):
+    current = input_digit['text']
+    new = current + str(digit)
+    input_digit.config(text=new)
 
-    # Give a function for the clear button
-    def clear():
-        input_digit.config(text='')
+# Give a function for the clear button
+def clear():
+    input_digit.config(text='')
 
-    # Create a function for each operation
-    def get_operation(op):
-        global frst_num, operator
+# Create a function for each operation
+def get_operation(op):
+    global frst_num, operator
 
-        frst_num = int(input_digit['text'])
-        operator = op
-        input_digit.config(text='')
+    frst_num = int(input_digit['text'])
+    operator = op
+    input_digit.config(text='')
 
-    # Perform operation within the = button
-    def get_answer():
-        global frst_num, scnd_num, operator
+# Perform operation within the = button
+def get_answer():
+    global frst_num, scnd_num, operator
          
-        scnd_num = input_digit['text']
+    scnd_num = input_digit['text']
 
-        if operator == '+':
-            input_digit.config(text=int(float(frst_num) + float(scnd_num)))
-        elif operator == '-':
-            input_digit.config(text=int(float(frst_num) - float(scnd_num)))
-        elif operator == '*':
-            input_digit.config(text=int(float(frst_num) * float(scnd_num)))
+    if operator == '+':
+        input_digit.config(text=int(float(frst_num) + float(scnd_num)))
+    elif operator == '-':
+        input_digit.config(text=int(float(frst_num) - float(scnd_num)))
+    elif operator == '*':
+        input_digit.config(text=int(float(frst_num) * float(scnd_num)))
+    else:
+        if scnd_num == 0:
+            input_digit.config(text='Syntax Error')
         else:
-            if scnd_num == 0:
-                input_digit.config(text='Syntax Error')
-            else:
-                input_digit.config(text=str(round(float(frst_num) / float(scnd_num), 2)))
+            input_digit.config(text=str(round(float(frst_num) / float(scnd_num), 2)))
 
 except ZeroDivisionError:
-    print("Syntax Error")
-
-except TypeError:
-    print("Syntax Error")
+    print("Division by zero is not allowed")
 
 finally: 
     print("Thank You For Using This Small And Simple Calculator ^__^")
