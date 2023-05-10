@@ -5,6 +5,9 @@
 #create a GUI for our calculator
 from tkinter import *
 import pyfiglet
+import colorama
+
+colorama.init()
 
 root = Tk()
 root.title('Simple Calculator')
@@ -36,7 +39,7 @@ def get_operation(op):
 def get_answer():
     try: 
         global frst_num, scnd_num, operator
-            
+                
         scnd_num = input_digit['text']
 
         if operator == '+':
@@ -51,10 +54,10 @@ def get_answer():
             else:
                 input_digit.config(text=str(round(float(frst_num) / float(scnd_num), 2)))
     except ZeroDivisionError:
-        print(pyfiglet.figlet_format("Syntax Error", font = "bubble" ))
+            print(pyfiglet.figlet_format("Syntax Error", font = "bubble" ))
 
     finally: 
-        print("Thank You For Using This Small And Simple Calculator ^__^")
+        print(colorama.Back.BLUE + "Thank You For Using This Small And Simple Calculator ^__^")
 
 
 #create a space where the calculation takes place or the screen of a calculator
